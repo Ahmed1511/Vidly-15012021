@@ -1,0 +1,102 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<link href="~/Content/font-awesome.min.css" rel="stylesheet" />
+
+<div class="TableHeader">
+    @Html.ActionLink("Create New Customer", "Create", "Customers", new { @class = "btn btn-success" })
+</div>
+<div class="index">
+
+    <table id="customers" class="table table-bordered table-hover">
+        <thead>
+            <tr>
+
+                <td><span class="glyphicon glyphicon-user"></span></td>
+                <td><span class="glyphicon glyphicon-calendar"></span></td>
+                <td><span style="color:red;background-color:white;height:10px;">SUBSCRIBED</span></td>
+                <td><span class="glyphicon glyphicon-level-up"></span></td>
+                <td><span class="glyphicon glyphicon-usd"></span></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
+
+
+@section scripts{
+
+    <script>
+
+        $(document).ready(function () {
+            var table = $("#customers").DataTable(
+                {
+                    ajax: {
+                        url: "/api/customers",
+                        dataSrc: ""
+                    },
+                    columns: [
+
+                        {
+                            data: "name",
+                            render: function (data, type, customer) {
+                                return "<a href='/customers/edit/" + customer.id + "'>" + customer.name + "</a>";
+                            }
+                        },
+                        { data: "dateofBirth" },
+                        { data: "issubscribed" },
+                        { data: "memberShipType.name" },
+                        { data: "memberShipType.discountRate" },
+                        {
+                            data: "id",
+                            render: function (data) {
+                                return "<buttun class='btn btn-primary' data-customer-id=" + data + ">Details</buttun>";
+                            }
+                        },
+                        {
+                            data: "id",
+                            render: function (data) {
+                                return "<buttun class='btn btn-danger js-delete' data-customer-id=" + data + ">Delete</button>";
+                            }
+                        }
+
+                    ]
+                }
+
+
+
+
+            );
+        });
+
+        $("#customers").on("click", ".js-delete", function () {
+            var button = $(this);
+            bootbox.confirm("Are You Sure You Want to Remove This Record?", function (result) {
+                if (result) {
+                    $.ajax({
+                        url: "/api/customers/" + button.attr("data-customer-id"),
+                        method: "Delete",
+                        success: function () {
+                            table.row(button.parents("tr")).remove().draw();
+
+                        }
+                    })
+                }
+
+            });
+        });
+
+
+
+
+
+
+
+    </script>
+
+}
+

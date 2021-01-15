@@ -1,0 +1,156 @@
+﻿body {
+        padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+.LandingPage{
+    min-height:100vh;
+    background-image:url("./img//2.jpg");
+    background-size:cover;
+    position:relative;
+}
+
+    .LandingPage .overlay {
+        background-color:rgba(0,0,0,.5);
+        position:absolute;
+        width:100%;
+        height:100%;
+        left:0;
+        right:0;
+        z-index:1;
+    }
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.index, .create, .edit, .Details {
+    background-color:orange;
+    padding: 25px;
+    margin: 20px;
+}
+
+.TableHeader{
+    padding:10px;
+    margin:10px;
+}
+
+.navbar-collapse .collapse{
+    background-color:maroon;
+}
+
+
+#headlayout {
+    background-color: orangered;
+    color:#ffffff;
+    font-family:Tahoma, sans-serif;    
+    font-size:20px;
+    border-bottom:2px solid white;
+    
+}
+
+.glyphicon {
+    font-size: 25px;
+    color:white;
+}
+
+
+
+/* Starting ShowCase*/
+
+#ShowCase {
+    min-height: 400px;
+   /* background: url('../Content/img/2.jpg')no-repeat 0 -500px;*/
+    text-align: center;
+    color: #ffffff;
+    
+}
+
+
+    #ShowCase h1 {
+        margin-top: 40px;
+        padding: 30px;
+        font-family: Vollkorn;
+        font-size: 55px;
+        margin-bottom: 10px;
+    }
+
+    #ShowCase p {
+        font-size: 20px;
+        padding:20px;
+    }
+
+    #ShowCase button {
+        height: 50px;
+        width: 250px;
+        font-family:sans-serif;
+        background-color:orange;
+        border:none;
+        margin-bottom:30px;
+
+    }
+
+.more {
+    height: 50px;
+    width: 150px;
+    font-family: sans-serif;
+    background-color: orange;
+    border: none;
+    margin-bottom: 30px;
+}
+
+        #ShowCase button:hover {
+            background-color: #ffffff;
+            color:orange;
+        }
+
+/* End ShowCase*/
+
+#partThree{
+    padding:20px;
+    margin:20px;
+}
+
+#partThree .row .h1 .h2 .h3{
+    color:orangered;
+}
+
+
+#searchGlypg{
+    font-size:10px;
+    color:white
+}
+
+/* Start Footer */
+
+#footer .socialmedia .glyphicon{
+    font-size:30px;
+    color:white
+}
+
+#footer {
+    background-color: white;
+    height: 100px;
+    font-family:'Open Sans';
+}
+
+    
+/* End Footer */
+
+
+

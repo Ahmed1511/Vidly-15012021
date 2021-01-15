@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div class="Details">
+    <table id="movieDetail">
+        <thead>
+            <tr>
+                <td>Name</td>
+                <td>Gene</td>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
+
+
+@section script{
+    <script>
+        $(document).ready(function () {
+            $("#movieDetail").DataTable();
+        });
+    </script>
+    
+    }
+

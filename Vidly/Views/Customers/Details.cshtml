@@ -1,0 +1,54 @@
+﻿
+@{
+    ViewBag.Title = "Details";
+}
+
+
+
+<div class="container Details">   
+    <table id="customerDetails">
+        <thead>
+            <tr>
+                <td>Name</td>
+                <td>Date of Birth</td>
+                <td>Subscribed</td>
+                <td>MemberShip</td>
+                <td>Discount Rate</td>
+                <td>Edit</td>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table> 
+
+   
+</div>
+
+@section scripts{    
+    <script>
+        $(document).ready(function () {
+            $("#customerDetails").DataTable({
+                "paging": false,
+                "ordering": false,
+                "info": false,
+                ajax: {
+                    url: "/api/customers",
+                    dataSrc:""
+                },
+                columns: [
+                    { data: "name" },
+                    { data: "dateofBirth" },
+                    { data: "issubscribed" },
+                    { data: "memberShipType.name" },
+                    { data: "memberShipType.discountRate" },
+                    { data:"" }
+
+                ]
+
+            });
+
+
+            
+        });
+    </script>
+        
+    }
